@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 
 const LabourBookingPage = () => {
+  const baseurl=import.meta.env.VITE_BASE_URL;
   const { state } = useLocation();
   const navigate = useNavigate();
 
@@ -33,7 +34,7 @@ const LabourBookingPage = () => {
     setSuccess(false);
 
     try {
-      const response = await fetch('http://localhost:4444/booking/addbooking', {
+      const response = await fetch(`${baseurl}booking/addbooking`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

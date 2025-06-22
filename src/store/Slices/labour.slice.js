@@ -76,7 +76,7 @@ export const fetchUserBookings = () => async (dispatch) => {
   dispatch(setBookingsLoading(true));
   dispatch(clearBookings());
   try {
-    const response = await fetch(`${baseUrl}/api/bookings/user`, {
+    const response = await fetch(`${baseUrl}api/bookings/user`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`, // Adjust based on your auth setup
       },
